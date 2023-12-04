@@ -6,7 +6,7 @@ class ScrollZoomClamp {
     this.#node.style.position = 'relative';
 
     this.#node.addEventListener('wheel', e => {
-      if (!e.metaKey) {
+      if (!e.metaKey && !e.ctrlKey) {
         e.stopPropagation();
         this.#showMsg(true);
       } else {
@@ -18,7 +18,7 @@ class ScrollZoomClamp {
     this.#msgNode = document.createElement('div');
     this.#msgNode.classList.add('scroll-zoom-clamp-message');
     this.#msgNode.style.opacity = 0;
-    this.#msgNode.innerHTML = message || `Use&nbsp;<b>${window?.navigator?.platform?.startsWith('Mac') ? '&#x2318' : '&#x229e'}</b>&nbsp;+&nbsp;<b>scroll</b>&nbsp;to zoom the chart`;
+    this.#msgNode.innerHTML = message || `Use&nbsp;<b>${window?.navigator?.platform?.startsWith('Mac') ? '&#x2318' : 'ctrl'}</b>&nbsp;+&nbsp;<b>scroll</b>&nbsp;to zoom the chart`;
 
     this.#node.appendChild(childNode);
     this.#node.appendChild(this.#msgNode);
