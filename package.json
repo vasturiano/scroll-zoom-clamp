@@ -1,6 +1,6 @@
 {
   "name": "scroll-zoom-clamp",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Prevent page scrolling interference by zooming components",
   "type": "module",
   "unpkg": "dist/scroll-zoom-clamp.min.js",
