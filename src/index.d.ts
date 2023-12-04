@@ -1,10 +1,14 @@
-export default class ScrollZoomClamp {
+export interface ConfigOptions {
+  message?: string;
+}
+
+declare class ScrollZoomClamp {
   constructor(
     childNode: HTMLElement,
-    options?: {
-      message?: string;
-    }
+    options?: ConfigOptions
   );
 
-  get node(): HTMLElement;
+  readonly node: HTMLElement;
 }
+
+export default ScrollZoomClamp;

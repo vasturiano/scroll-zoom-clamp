@@ -7,7 +7,7 @@ scroll-zoom-clamp
 
 This DOM utility prevents zooming components from hijacking [mouse-wheel events](https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event) and interfering with the natural scroll of a page.
 
-By wrapping a child element with this component, wheel events are only propagated downstream if a modifier key is pressed (meta key), otherwise a message is overlayed informing the user he can do so.
+By wrapping a child element with this component, wheel events are only propagated downstream if a **modifier key** is pressed (meta key - **⌘** or **⊞**), otherwise a message is overlayed informing the user to do so by pressing the key.
 
 ## Quick start
 
@@ -40,11 +40,11 @@ The following configuration options are available:
 | --- | --- |
 | <b>message</b>: <i>str</i> | Ability to customize the message shown when the zoom is blocked. Supports plain text or HTML content. |
 
-### Methods
+### Attributes
 
-| Method | Description |
+| Type | Attribute | Description |
 | --- | --- |
-| <b>node</b>() | Returns the wrapper DOM element. |
+| Getter | <b>node</b> | Returns the wrapper DOM element. |
 
 ## Giving Back
 
