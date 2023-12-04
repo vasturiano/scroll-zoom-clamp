@@ -1,0 +1,58 @@
+{
+  "name": "scroll-zoom-clamp",
+  "version": "0.0.1",
+  "description": "Prevent page scrolling interference by zooming components",
+  "type": "module",
+  "unpkg": "dist/scroll-zoom-clamp.min.js",
+  "main": "dist/scroll-zoom-clamp.mjs",
+  "module": "dist/scroll-zoom-clamp.mjs",
+  "types": "dist/scroll-zoom-clamp.d.ts",
+  "exports": {
+    "umd": "./dist/scroll-zoom-clamp.min.js",
+    "default": "./dist/scroll-zoom-clamp.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vasturiano/scroll-zoom-clamp.git"
+  },
+  "homepage": "https://github.com/vasturiano/scroll-zoom-clamp",
+  "keywords": [
+    "scroll",
+    "zoom"
+  ],
+  "author": {
+    "name": "Vasco Asturiano",
+    "url": "https://github.com/vasturiano"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasturiano/scroll-zoom-clamp/issues"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "dev": "rollup -w -c rollup.config.js",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist/**/*",
+    "example/**/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "postcss": "^8.4.32",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.6.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}

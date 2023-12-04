@@ -1,0 +1,52 @@
+<head>
+
+  <script src="//unpkg.com/circlepack-chart"></script>
+  <script src="//unpkg.com/scroll-zoom-clamp"></script>
+<!--  <script src="../../dist/scroll-zoom-clamp.js"></script>-->
+
+  <style>
+    body { margin: 0; background-color: lightgrey; }
+
+    #chart { margin: 70vh 0; }
+  </style>
+</head>
+<body>
+  <div id="chart"></div>
+
+  <script>
+    const chartElem = document.getElementById('chart');
+    const innerChartElem = document.createElement('div');
+
+    chartElem.appendChild(new ScrollZoomClamp(innerChartElem).node);
+
+    // Bubble chart code below
+    const CHILDREN_PROB_DECAY = 0.15; // per level
+    const MAX_CHILDREN = 10;
+    const MAX_VALUE = 100;
+
+    function genNode(name='root', probOfChildren=1) {
+      if (Math.random() < probOfChildren) {
+        return {
+          name,
+          children: [...Array(Math.round(Math.random() * MAX_CHILDREN))]
+            .map((_, i) => genNode(i, probOfChildren - CHILDREN_PROB_DECAY))
+        }
+      } else {
+        return {
+          name,
+          value: Math.round(Math.random() * MAX_VALUE)
+        }
+      }
+    }
+
+    CirclePack()
+      .height(window.innerHeight * 0.6)
+      .data(genNode())
+      .color(() => 'red')
+      .showLabels(false)
+      .minCircleRadius(8)
+      .excludeRoot(true)
+      .tooltipContent((d, node) => `Size: <i>${node.value}</i>`)
+      (innerChartElem);
+  </script>
+</body>
