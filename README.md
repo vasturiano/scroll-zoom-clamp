@@ -43,7 +43,7 @@ The following configuration options are available:
 ### Attributes
 
 | Type | Attribute | Description |
-| --- | --- |
+| --- | --- | --- |
 | Getter | <b>node</b> | Returns the wrapper DOM element. |
 
 ## Giving Back
