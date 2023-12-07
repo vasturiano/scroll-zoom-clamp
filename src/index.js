@@ -15,10 +15,16 @@ class ScrollZoomClamp {
       }
     }, true);
 
+    const keyChar = window?.navigator?.platform?.startsWith('Mac')
+      ? '&#x2318'
+      : window?.navigator?.platform?.startsWith('Win')
+        ? '&#x229E'
+        : 'ctrl';
+
     this.#msgNode = document.createElement('div');
     this.#msgNode.classList.add('scroll-zoom-clamp-message');
     this.#msgNode.style.opacity = 0;
-    this.#msgNode.innerHTML = message || `Use&nbsp;<b>${window?.navigator?.platform?.startsWith('Mac') ? '&#x2318' : 'ctrl'}</b>&nbsp;+&nbsp;<b>scroll</b>&nbsp;to zoom the chart`;
+    this.#msgNode.innerHTML = message || `Use&nbsp;<b>${keyChar}</b>&nbsp;+&nbsp;<b>scroll</b>&nbsp;to zoom the chart`;
 
     this.#node.appendChild(childNode);
     this.#node.appendChild(this.#msgNode);
