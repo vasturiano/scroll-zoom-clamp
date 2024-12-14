@@ -1,6 +1,5 @@
 <head>
 
-  <script src="//unpkg.com/circlepack-chart"></script>
   <script src="//unpkg.com/scroll-zoom-clamp"></script>
 <!--  <script src="../../dist/scroll-zoom-clamp.js"></script>-->
 
@@ -13,7 +12,9 @@
 <body>
   <div id="chart"></div>
 
-  <script>
+  <script type="module">
+    import CirclePack from 'https://esm.sh/circlepack-chart';
+
     const chartElem = document.getElementById('chart');
     const innerChartElem = document.createElement('div');
 
